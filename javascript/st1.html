@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head><body><style>
+#show{
+    display:none;
+}</style>
+<body>
+<div id="show" >
+<h1>email</h1><span id="demo"></span> 
+<h2>firstname</h2><span id="demo1"></span> 
+<h3>lastname</h3><span id="demo2"></span> 
+<h4>adress</h4><span id="demo3"></span> 
+</div>
+</script>
+	<div id="show1">
+	<form name="myForm">
+	<input id="email" placeholder="email">
+	<input id="fname" placeholder="fname">
+	<input id="lname" placeholder="lname">
+	<input id="adress" placeholder="adress"><br>
+
+</form>
+<button onclick="validateForm()">submit</button>
+
+</body>
+</html>
+<script>
+
+	function validateForm() {
+		debugger;
+
+		var x = document.forms["myForm"]["fname"].value;
+		var y = document.getElementById('email').value;
+		var z = document.getElementById('lname').value;
+		var a = document.getElementById('adress').value;
+		if (x == "" || y == "" || z =="" || a =="") {
+			alert("Name must be filled out");
+			return false;
+		}else{
+			var Email=document.getElementById("email").value;
+			document.getElementById("demo").innerHTML=Email;
+			var firstname=document.getElementById("fname").value;
+			document.getElementById("demo1").innerHTML=firstname;
+			var lastname=document.getElementById("lname").value;
+			document.getElementById("demo2").innerHTML=lastname;
+			var adress=document.getElementById("adress").value;
+			document.getElementById("demo3").innerHTML=adress;
+			
+			document.getElementById("show1").style.display="none";
+			document.getElementById("show").style.display="block";
+		}
+	}
+	</script>

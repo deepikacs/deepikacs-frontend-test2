@@ -1,0 +1,12 @@
+puts "good"				One below the other
+print "heyy"				One beside the other
+
+f1 = File.new("file1.txt","w")		Create a new file *syntax*
+
+File.read("file1.txt")			Basically to open a file [in irb]
+
+File.open("file1.txt","r") do |f|	Opens a file [irb]
+	var = f.gets
+	puts var
+end
+

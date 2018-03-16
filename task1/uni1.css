@@ -1,0 +1,23 @@
+body{
+    background-image: url("l.jpg");
+    background-size:cover; 
+
+}
+a:link {
+    color: red;
+}
+
+
+a:visited {
+    color: green;
+}
+
+
+a:hover {
+    color: hotpink;
+}
+
+
+a:active {
+    color: blue;
+}
