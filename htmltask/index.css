@@ -9,7 +9,7 @@
   border-radius: 50%;
 }
 
-.fa:hover {
+.fa-hover {
     opacity: 0.7;
 }
 
@@ -60,7 +60,11 @@
    border-style:solid double;
  
 }
-input
+.input
 {
   float:right;
-margin-right:3px;}
+margin-right:3px;
+}
+.demo{
+  margin-top: 100px !important;
+}
