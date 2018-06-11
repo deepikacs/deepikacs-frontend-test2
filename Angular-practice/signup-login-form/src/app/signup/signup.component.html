@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6 back-ground-color">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 ">
+          <h3>Signup</h3>
+        </div>
+      </div>
+      <form #detailForm="ngForm" (ngSubmit)="onSubmit(detailForm)">
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+            <div class="form-group">
+              <label>Firstname</label>
+              <input type="text" class="form-control" name="fname" [(ngModel)]="fname" required pattern="[^1-9]+[^1-9]+[^1-9]+[^1-9]"
+              #fnameRef="ngModel"
+              [ngClass]="(fnameRef.invalid && fnameRef.touched) ? 'red' : ''">
+
+              <div class="invalid-feedback"
+              *ngIf="fnameRef.errors && (fnameRef.dirty ||fnameRef.touched)">
+              <p *ngIf="fnameRef.errors.required">first name  is required</p>
+              <p *ngIf="fnameRef.errors.pattern">first name  must contain at least the 4 character</p>
+              </div>
+            </div>
+         </div>
+        </div>
+          <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+            <div class="form-group">
+              <label>Lastname</label>
+              <input type="text" class="form-control" name="lname" [(ngModel)]="lname" required pattern="[a-z]+[a-z]+[a-z]+[a-z]"
+              #lnameRef="ngModel"
+              [ngClass]="(lnameRef.invalid && lnameRef.touched) ? 'red' : ''">
+
+              <div class="invalid-feedback"
+              *ngIf="lnameRef.errors && (lnameRef.dirty ||lnameRef.touched)">
+              <p *ngIf="lnameRef.errors.required">last name  is required</p>
+              <p *ngIf="lnameRef.errors.pattern">last name  must contain at least the 4 character</p>
+              </div>
+            </div>
+         </div>
+        </div>
+          <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+            <div class="form-group">
+        <label>DOB</label>
+        <input
+          type="date"
+          class="form-control"
+          name="dob"
+          [(ngModel)]="dob"
+          required
+          #dobRef="ngModel"
+          (ngModelChange)="onDobChange()"
+          [ngClass]="(lnameRef.invalid && lnameRef.touched) ? 'red' : ''">
+        <div class="invalid-feedback"
+             *ngIf="dobRef.errors">
+         <p *ngIf="dobRef.errors.required">DOB is required</p> 
+        </div>
+      </div>
+
+          </div>
+          </div>
+
+
+
+          <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" name="signupemail" [(ngModel)]="signupemail" required pattern="[^ @]*@[^ @]*"
+              #emailRef="ngModel"
+              [ngClass]="(emailRef.invalid && emailRef.touched) ? 'red' : ''">
+
+              <div class="invalid-feedback"
+              *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)">
+              <p *ngIf="emailRef.errors.required">Email is required</p>
+              <p *ngIf="emailRef.errors.pattern">Email must contain at least the @ character</p>
+              </div>
+            </div>
+         </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-8 col-md-8 col-xs-12 col-lg-8">
+            <!-- <div class="form-group">
+              <input type="passwordLogIn" class="form-control margin-pop"  placeholder="Password" name="password" [ngStyle]="{'background' : 'url(./assets/Lock_Green.png)'}"
+              [(ngModel)]="passwordLogIn" #passwordLogInRef="ngModel" required
+              [ngClass]="(passwordLogInRef.invalid && passwordLogInRef.touched) ? 'red' : ''">
+              <p *ngIf="(passwordLogInRef.invalid && passwordLogInRef.touched)">password is Required</p>
+            </div> -->
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" name="signuppassword"
+               [(ngModel)]="signuppassword" required minlength="8"
+                #passwordRef="ngModel"
+              [ngClass]="(passwordRef.invalid &&  passwordRef.touched) ? 'red' : ''">
+              <div class="invalid-feedback"
+              *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)">
+              <p *ngIf="passwordRef.errors.required">Password is required</p>
+              <p *ngIf="passwordRef.errors.minlength">Password must be at least 8 characters</p>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <button (click)="mySave()" class="btn custombtn">submit</button>
+         <button (click)="router.navigate(['/login'])" class="custombtn">login</button>   
+      </form>
+
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+    </div>
+  </div>
+</div>
