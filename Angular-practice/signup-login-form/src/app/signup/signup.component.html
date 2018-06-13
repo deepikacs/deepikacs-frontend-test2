@@ -53,9 +53,9 @@
           required
           #dobRef="ngModel"
           (ngModelChange)="onDobChange()"
-          [ngClass]="(lnameRef.invalid && lnameRef.touched) ? 'red' : ''">
+          [ngClass]="(dobRef.invalid && dobRef.touched) ? 'red' : ''">
         <div class="invalid-feedback"
-             *ngIf="dobRef.errors">
+             *ngIf="dobRef.errors && (dobRef.dirty ||dobRef.touched)">
          <p *ngIf="dobRef.errors.required">DOB is required</p> 
         </div>
       </div>
@@ -112,3 +112,4 @@
     </div>
   </div>
 </div>
+<p>lastname:{{lname}}</p>
